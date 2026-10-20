@@ -3,7 +3,7 @@
  * Plugin Name:       WP GitHub MD
  * Plugin URI:        https://github.com/elmitash/wp-github-md
  * Description:       초경량, 고성능, 제로 취약점 워드프레스 순정 GitHub 마크다운 에디터 & 뷰어 플러그인
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 6.0
  * Requires PHP:      8.2
  * Author:            elmitash
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 }
 
 // 플러그인 전역 상수 정의
-define('WP_GITHUB_MD_VERSION', '1.0.2');
+define('WP_GITHUB_MD_VERSION', '1.0.3');
 define('WP_GITHUB_MD_FILE', __FILE__);
 define('WP_GITHUB_MD_PATH', plugin_dir_path(__FILE__));
 define('WP_GITHUB_MD_URL', plugin_dir_url(__FILE__));
