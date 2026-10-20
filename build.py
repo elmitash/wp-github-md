@@ -9,7 +9,7 @@ import zipfile
 def build_zip():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     zip_filename = os.path.join(base_dir, 'wp-github-md.zip')
-    exclude_names = {'.git', '.gitignore', 'wp-github-md.zip', '__pycache__', '.DS_Store', 'build.py'}
+    exclude_names = {'.git', '.gitignore', '.github', 'wp-github-md.zip', '__pycache__', '.DS_Store', 'build.py'}
 
     print(f"📦 워드프레스 플러그인 패키징 시작: {zip_filename}")
     
