@@ -12,8 +12,8 @@
 
         const settings = window.wpGitHubMdSettings || {};
 
-        // 워드프레스 기본 비주얼/텍스트 탭 및 미디어 버튼 숨김 처리
-        $('#wp-content-wrap, #wp-content-editor-tools').hide();
+        // 워드프레스 기본 툴바 및 퀵태그 숨김 처리
+        $('#wp-content-editor-tools, .quicktags-toolbar, .wp-editor-tabs, #ed_toolbar').hide();
 
         // EasyMDE 인스턴스 초기화
         const easyMDE = new EasyMDE({

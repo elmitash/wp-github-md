@@ -7,9 +7,18 @@
     margin-bottom: 20px;
 }
 
-#wp-content-wrap,
-#wp-content-editor-tools {
+/* 불필요한 기본 툴바/탭만 숨기고 컨테이너 자체는 유지 */
+#wp-content-editor-tools,
+.wp-editor-tabs,
+.quicktags-toolbar,
+#ed_toolbar {
     display: none !important;
+}
+
+#wp-content-editor-container {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
 }
 
 /* EasyMDE 기본 컨테이너 */

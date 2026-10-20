@@ -91,13 +91,16 @@ final class WP_GitHub_MD_Editor
      */
     public static function enqueue_admin_assets(string $hook_suffix): void
     {
-        // post.php 또는 post-new.php 일 때만 로드
-        if (!in_array($hook_suffix, ['post.php', 'post-new.php'], true)) {
+        $screen = function_exists('get_current_screen') ? get_current_screen() : null;
+        $is_post_edit = in_array($hook_suffix, ['post.php', 'post-new.php'], true)
+            || ($screen && in_array($screen->base, ['post', 'post-new'], true));
+
+        if (!$is_post_edit) {
             return;
         }
 
-        global $post;
-        if (!$post || !in_array($post->post_type, self::get_supported_post_types(), true)) {
+        $post_type = $screen->post_type ?? (get_post_type() ?: 'post');
+        if (!in_array($post_type, self::get_supported_post_types(), true)) {
             return;
         }
 
