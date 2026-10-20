@@ -120,6 +120,14 @@ final class WP_GitHub_MD_Editor
             '5.5.1'
         );
 
+        // Highlight.js 테마 CSS (에디터 실시간 프리뷰 코드 하이라이팅용)
+        wp_enqueue_style(
+            'wp-github-md-highlight-css',
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css',
+            [],
+            '11.10.0'
+        );
+
         // EasyMDE Core CSS
         wp_enqueue_style(
             'wp-github-md-easymde-css',
@@ -132,15 +140,24 @@ final class WP_GitHub_MD_Editor
         wp_enqueue_style(
             'wp-github-md-admin-css',
             WP_GITHUB_MD_URL . 'assets/css/admin-editor.css',
-            ['wp-github-md-easymde-css', 'wp-github-md-github-css'],
+            ['wp-github-md-easymde-css', 'wp-github-md-github-css', 'wp-github-md-highlight-css'],
             WP_GITHUB_MD_VERSION
+        );
+
+        // Highlight.js 코어 JS (에디터 실시간 프리뷰 연동)
+        wp_enqueue_script(
+            'wp-github-md-highlight-js',
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js',
+            [],
+            '11.10.0',
+            true
         );
 
         // EasyMDE Core JS
         wp_enqueue_script(
             'wp-github-md-easymde-js',
             'https://cdn.jsdelivr.net/npm/easymde@2.18.0/dist/easymde.min.js',
-            ['jquery'],
+            ['jquery', 'wp-github-md-highlight-js'],
             '2.18.0',
             true
         );

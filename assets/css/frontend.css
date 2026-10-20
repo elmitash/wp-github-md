@@ -6,20 +6,88 @@
 .wp-github-md-container.markdown-body {
     box-sizing: border-box;
     min-width: 200px;
-    max-width: 100%;
+    max-width: 900px; /* 참조 파일과 일치 */
     margin: 0 auto;
-    padding: 16px 0;
+    padding: 24px 32px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
     color: #1f2328;
-    background-color: transparent;
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+}
+
+/* 코드 블록 스타일링 (참조 파일 100% 반영) */
+.wp-github-md-container.markdown-body pre {
+    position: relative;
+    background-color: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    border-radius: 6px !important;
+    padding: 2.2em 16px 16px 16px !important; /* 복사 버튼 상단 여백 확보 */
+    overflow-x: auto !important;
+    color: #1f2328 !important;
+    margin: 16px 0 !important;
+}
+
+.wp-github-md-container.markdown-body code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+    font-size: 85% !important;
+    color: #1f2328 !important;
+    background-color: rgba(175, 184, 193, 0.2);
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+}
+
+.wp-github-md-container.markdown-body pre code {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    color: inherit !important;
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+}
+
+/* 테이블 스타일링 */
+.wp-github-md-container.markdown-body table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 16px 0 !important;
+}
+
+.wp-github-md-container.markdown-body th,
+.wp-github-md-container.markdown-body td {
+    padding: 8px 14px !important;
+    border: 1px solid #d0d7de !important;
+}
+
+.wp-github-md-container.markdown-body tr:nth-child(2n) {
+    background-color: #f6f8fa !important;
 }
 
 /* 다크 모드 지원 (시스템 설정 감응) */
 @media (prefers-color-scheme: dark) {
     .wp-github-md-container.markdown-body {
+        background-color: #0d1117;
         color: #e6edf3;
+        border-color: #30363d;
+    }
+    .wp-github-md-container.markdown-body pre {
+        background-color: #161b22 !important;
+        border-color: #30363d !important;
+        color: #e6edf3 !important;
+    }
+    .wp-github-md-container.markdown-body code {
+        color: #e6edf3 !important;
+        background-color: rgba(110, 118, 129, 0.4);
+    }
+    .wp-github-md-container.markdown-body th,
+    .wp-github-md-container.markdown-body td {
+        border-color: #30363d !important;
+    }
+    .wp-github-md-container.markdown-body tr:nth-child(2n) {
+        background-color: #161b22 !important;
     }
 }
 
@@ -32,12 +100,6 @@
 .wp-github-md-container ul:has(input.task-list-item-checkbox) {
     list-style-type: none;
     padding-left: 20px;
-}
-
-/* 코드 블록 복사 버튼 래핑 */
-.wp-github-md-container pre {
-    position: relative;
-    padding-top: 2.4em; /* 복사 버튼 공간 확보 */
 }
 
 /* 원클릭 복사 버튼 */

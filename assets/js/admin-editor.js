@@ -97,7 +97,7 @@
             ],
             renderingConfig: {
                 singleLineBreaks: false,
-                codeSyntaxHighlighting: false
+                codeSyntaxHighlighting: true
             }
         });
 

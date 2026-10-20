@@ -107,9 +107,9 @@ final class WP_GitHub_MD_Core
         // 2. highlight.js 스타일 (GitHub 공식 라이트 테마)
         wp_enqueue_style(
             'wp-github-md-highlight-css',
-            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github.min.css',
             [],
-            '11.9.0'
+            '11.10.0'
         );
 
         // 3. 플러그인 커스텀 프론트엔드 CSS (복사 버튼 및 테마 격리 스타일)
@@ -123,9 +123,9 @@ final class WP_GitHub_MD_Core
         // 4. highlight.js 코어 스크립트
         wp_enqueue_script(
             'wp-github-md-highlight-js',
-            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js',
             [],
-            '11.9.0',
+            '11.10.0',
             true
         );
 

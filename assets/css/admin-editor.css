@@ -24,24 +24,24 @@
 /* EasyMDE 기본 컨테이너 */
 .EasyMDEContainer {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    border-radius: 4px;
+    border-radius: 6px;
     background: #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* 툴바 스타일링 */
 .EasyMDEContainer .editor-toolbar {
-    border-color: #dcdcde;
-    background: #f6f7f7;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    padding: 6px 8px;
+    border-color: #d0d7de;
+    background: #f6f8fa;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 6px 10px;
     opacity: 1;
 }
 
 .EasyMDEContainer .editor-toolbar button {
     color: #3c434a;
-    border-radius: 3px;
+    border-radius: 4px;
     width: 32px;
     height: 32px;
     transition: all 0.15s ease-in-out;
@@ -49,49 +49,146 @@
 
 .EasyMDEContainer .editor-toolbar button:hover,
 .EasyMDEContainer .editor-toolbar button.active {
-    background: #e0e0e0;
-    color: #1d2327;
-    border-color: #8c8f94;
+    background: #e8ecf0;
+    color: #0969da;
+    border-color: #d0d7de;
 }
 
 .EasyMDEContainer .editor-toolbar i.separator {
-    border-right: 1px solid #dcdcde;
+    border-right: 1px solid #d0d7de;
     margin: 0 6px;
 }
 
-/* 코드미러 에디터 영역 */
+/* ========================================================
+   좌측 마크다운 입력창 (CodeMirror) 폰트 & 헤더 크기 정돈
+   ======================================================== */
 .EasyMDEContainer .CodeMirror {
-    font-family: "JetBrains Mono", "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
-    font-size: 14px;
-    line-height: 1.6;
-    border-color: #dcdcde;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    min-height: 500px;
+    font-family: "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, Menlo, Monaco, monospace !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    color: #24292f !important;
+    border-color: #d0d7de;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    min-height: 550px;
+    padding: 12px;
 }
 
 .EasyMDEContainer .CodeMirror-focused {
-    border-color: #2271b1;
-    box-shadow: 0 0 0 1px #2271b1;
+    border-color: #0969da;
+    box-shadow: 0 0 0 1px #0969da;
 }
 
-/* 실시간 프리뷰 영역 (GitHub 마크다운 스타일) */
+/* 마크다운 제목(#, ##, ###) 과도한 폰트 확대 방지 및 단정한 크기 적용 */
+.EasyMDEContainer .CodeMirror .cm-header {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+    font-weight: 600 !important;
+    color: #1f2328 !important;
+}
+
+.EasyMDEContainer .CodeMirror .cm-header-1 {
+    font-size: 1.3rem !important; /* 기존 200% 거대 폰트 차단 */
+    line-height: 1.4 !important;
+}
+
+.EasyMDEContainer .CodeMirror .cm-header-2 {
+    font-size: 1.18rem !important;
+    line-height: 1.4 !important;
+}
+
+.EasyMDEContainer .CodeMirror .cm-header-3 {
+    font-size: 1.08rem !important;
+    line-height: 1.4 !important;
+}
+
+.EasyMDEContainer .CodeMirror .cm-header-4,
+.EasyMDEContainer .CodeMirror .cm-header-5,
+.EasyMDEContainer .CodeMirror .cm-header-6 {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+}
+
+/* 코드/인라인 코드 스타일 */
+.EasyMDEContainer .CodeMirror .cm-comment.cm-formatting-code-block,
+.EasyMDEContainer .CodeMirror .cm-comment {
+    font-size: 13px !important;
+    color: #57606a !important;
+}
+
+/* ========================================================
+   우측 실시간 GitHub 프리뷰 영역 (참조 스타일 100% 반영)
+   ======================================================== */
 .EasyMDEContainer .editor-preview-side,
 .EasyMDEContainer .editor-preview {
-    background: #ffffff;
-    padding: 24px;
-    border-color: #dcdcde;
-    box-sizing: border-box;
-    overflow-y: auto;
+    background-color: #ffffff !important;
+    padding: 24px 32px !important;
+    border-color: #d0d7de !important;
+    box-sizing: border-box !important;
+    overflow-y: auto !important;
 }
 
-/* GitHub Markdown CSS 연동 최적화 */
+/* GitHub Markdown 프리뷰 본문 타이포그래피 */
 .editor-preview.markdown-body,
 .editor-preview-side.markdown-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.65;
-    color: #1f2328;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #1f2328 !important;
+}
+
+/* 프리뷰 내부 코드 블록 선명한 표시 보장 */
+.editor-preview.markdown-body pre,
+.editor-preview-side.markdown-body pre {
+    background-color: #f6f8fa !important;
+    border: 1px solid #d0d7de !important;
+    border-radius: 6px !important;
+    padding: 16px !important;
+    overflow-x: auto !important;
+    color: #1f2328 !important;
+    margin: 16px 0 !important;
+}
+
+.editor-preview.markdown-body code,
+.editor-preview-side.markdown-body code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+    font-size: 85% !important;
+    color: #1f2328 !important;
+    background-color: rgba(175, 184, 193, 0.2);
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+}
+
+.editor-preview.markdown-body pre code,
+.editor-preview-side.markdown-body pre code {
+    background-color: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    color: inherit !important;
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+}
+
+/* 프리뷰 내부 테이블 스타일 */
+.editor-preview.markdown-body table,
+.editor-preview-side.markdown-body table {
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 16px 0 !important;
+}
+
+.editor-preview.markdown-body th,
+.editor-preview.markdown-body td,
+.editor-preview-side.markdown-body th,
+.editor-preview-side.markdown-body td {
+    padding: 8px 14px !important;
+    border: 1px solid #d0d7de !important;
+}
+
+.editor-preview.markdown-body tr:nth-child(2n),
+.editor-preview-side.markdown-body tr:nth-child(2n) {
+    background-color: #f6f8fa !important;
 }
 
 /* 전체화면 모드 시 워드프레스 어드민바보다 위에 위치 */
@@ -105,12 +202,12 @@
 
 /* 상태바 (글자수/단어수 카운터) */
 .EasyMDEContainer .editor-statusbar {
-    padding: 6px 10px;
+    padding: 6px 12px;
     font-size: 12px;
     color: #646970;
-    border: 1px solid #dcdcde;
+    border: 1px solid #d0d7de;
     border-top: none;
-    background: #f6f7f7;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    background: #f6f8fa;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
