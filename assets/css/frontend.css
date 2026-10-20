@@ -1,65 +1,109 @@
 /**
  * WP GitHub MD - Frontend Styles (GitHub Viewer & Code Highlighting)
- * Perfect Light & Dark Mode Compatibility (including Blogsy theme: html[scheme="dark"])
+ * Theme-Integrated Seamless Layout & Beautiful Dark Mode
  */
 
 /* ========================================================
-   1. 기본 라이트 모드 (Light Mode Standard)
+   1. 본문 컨테이너 (테마 배경과 자연스럽게 일체화)
    ======================================================== */
 .wp-github-md-container.markdown-body {
     box-sizing: border-box;
-    min-width: 200px;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 32px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 15px;
-    line-height: 1.6;
-    color: #1f2328;
-    background-color: #ffffff;
-    border: 1px solid #d0d7de;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* 제목 스타일 */
-.wp-github-md-container.markdown-body h1,
-.wp-github-md-container.markdown-body h2 {
-    padding-bottom: 0.3em;
-    border-bottom: 1px solid #d0d7de;
+    font-size: 16px;
+    line-height: 1.7;
     color: inherit;
 }
 
+/* 제목 스타일 (자연스러운 여백 및 밑줄) */
 .wp-github-md-container.markdown-body h1,
-.wp-github-md-container.markdown-body h2,
-.wp-github-md-container.markdown-body h3,
-.wp-github-md-container.markdown-body h4 {
-    font-weight: 600;
-    margin-top: 24px;
-    margin-bottom: 16px;
-    line-height: 1.25;
+.wp-github-md-container.markdown-body h2 {
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid rgba(208, 215, 222, 0.5);
+    color: inherit;
+    font-weight: 700;
 }
 
-/* 코드 블록 스타일링 */
+.wp-github-md-container.markdown-body h1 {
+    font-size: 1.85em;
+    margin-top: 32px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.wp-github-md-container.markdown-body h2 {
+    font-size: 1.45em;
+    margin-top: 28px;
+    margin-bottom: 16px;
+    line-height: 1.35;
+}
+
+.wp-github-md-container.markdown-body h3 {
+    font-size: 1.25em;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: inherit;
+    line-height: 1.4;
+}
+
+.wp-github-md-container.markdown-body h4,
+.wp-github-md-container.markdown-body h5,
+.wp-github-md-container.markdown-body h6 {
+    font-size: 1.1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: inherit;
+}
+
+.wp-github-md-container.markdown-body p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: inherit;
+}
+
+.wp-github-md-container.markdown-body ul,
+.wp-github-md-container.markdown-body ol {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-left: 2em;
+    color: inherit;
+}
+
+.wp-github-md-container.markdown-body li {
+    margin-top: 0.25em;
+}
+
+/* ========================================================
+   2. 코드 블록 & 인라인 코드 (라이트 모드)
+   ======================================================== */
 .wp-github-md-container.markdown-body pre {
     position: relative;
     background-color: #f6f8fa !important;
     border: 1px solid #d0d7de !important;
-    border-radius: 6px !important;
-    padding: 2.2em 16px 16px 16px !important;
+    border-radius: 8px !important;
+    padding: 2.4em 18px 16px 18px !important;
     overflow-x: auto !important;
     color: #1f2328 !important;
-    margin: 16px 0 !important;
-    font-size: 13.5px !important;
-    line-height: 1.55 !important;
+    margin: 20px 0 !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .wp-github-md-container.markdown-body code {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+    font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
     font-size: 85% !important;
-    color: #1f2328 !important;
+    color: #1f2328;
     background-color: rgba(175, 184, 193, 0.2);
-    padding: 0.2em 0.4em;
+    padding: 0.2em 0.45em;
     border-radius: 6px;
 }
 
@@ -72,18 +116,25 @@
     line-height: inherit !important;
 }
 
-/* 테이블 스타일링 */
+/* 테이블 스타일 */
 .wp-github-md-container.markdown-body table {
     display: table !important;
     width: 100% !important;
     border-collapse: collapse !important;
-    margin: 16px 0 !important;
+    margin: 20px 0 !important;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .wp-github-md-container.markdown-body th,
 .wp-github-md-container.markdown-body td {
-    padding: 8px 14px !important;
+    padding: 10px 14px !important;
     border: 1px solid #d0d7de !important;
+}
+
+.wp-github-md-container.markdown-body th {
+    font-weight: 600;
+    background-color: #f6f8fa;
 }
 
 .wp-github-md-container.markdown-body tr:nth-child(2n) {
@@ -95,18 +146,18 @@
     padding: 0 1em;
     color: #656d76;
     border-left: 0.25em solid #d0d7de;
-    margin: 16px 0;
+    margin: 18px 0;
 }
 
 .wp-github-md-container.markdown-body hr {
-    height: 0.25em;
+    height: 1px;
     padding: 0;
-    margin: 24px 0;
-    background-color: #d0d7de;
+    margin: 28px 0;
+    background-color: rgba(208, 215, 222, 0.7);
     border: 0;
 }
 
-/* 태스크 리스트 체크박스 */
+/* 체크박스 태스크 리스트 */
 .wp-github-md-container ul li input.task-list-item-checkbox {
     margin: 0 0.5em 0.25em -1.3em;
     vertical-align: middle;
@@ -125,20 +176,21 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 3px 8px;
+    padding: 4px 9px;
     font-size: 12px;
     font-family: inherit;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 18px;
     color: #656d76;
-    background-color: #f6f8fa;
-    border: 1px solid rgba(31, 35, 40, 0.15);
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
     border-radius: 6px;
     cursor: pointer;
     user-select: none;
     transition: all 0.2s cubic-bezier(0.3, 0, 0.5, 1);
     opacity: 0;
     z-index: 10;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .wp-github-md-container pre:hover .wp-ghmd-copy-btn,
@@ -148,18 +200,14 @@
 
 @media (hover: none) {
     .wp-ghmd-copy-btn {
-        opacity: 0.85;
+        opacity: 0.9;
     }
 }
 
 .wp-ghmd-copy-btn:hover {
     color: #1f2328;
     background-color: #f3f4f6;
-    border-color: rgba(31, 35, 40, 0.2);
-}
-
-.wp-ghmd-copy-btn:active {
-    background-color: #ebecf0;
+    border-color: #afb8c1;
 }
 
 .wp-ghmd-copy-btn.copied {
@@ -176,71 +224,81 @@
 
 
 /* ========================================================
-   2. 다크 모드 완벽 지원 (Dark Mode: Blogsy Theme & OS)
+   3. 다크 모드 (테마 일체형 세련된 다크 그레이 & GitHub Dark)
    ======================================================== */
 html[scheme="dark"] .wp-github-md-container.markdown-body,
 html[data-theme="dark"] .wp-github-md-container.markdown-body,
 html.dark .wp-github-md-container.markdown-body,
 body.dark-mode .wp-github-md-container.markdown-body,
 body.dark .wp-github-md-container.markdown-body {
-    background-color: #0d1117 !important;
-    color: #e6edf3 !important;
-    border-color: #30363d !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #e3e7ed !important;
 }
 
+/* 제목 밑줄 */
 html[scheme="dark"] .wp-github-md-container.markdown-body h1,
 html[scheme="dark"] .wp-github-md-container.markdown-body h2,
 html[data-theme="dark"] .wp-github-md-container.markdown-body h1,
 html[data-theme="dark"] .wp-github-md-container.markdown-body h2 {
-    border-bottom-color: #21262d !important;
+    border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
 }
 
+/* 코드 블록 (칠흑색이 아닌 테마 카드와 어울리는 세련된 딥 차콜 #161b22) */
 html[scheme="dark"] .wp-github-md-container.markdown-body pre,
 html[data-theme="dark"] .wp-github-md-container.markdown-body pre,
 html.dark .wp-github-md-container.markdown-body pre,
 body.dark-mode .wp-github-md-container.markdown-body pre {
     background-color: #161b22 !important;
-    border-color: #30363d !important;
+    border: 1px solid rgba(240, 246, 252, 0.14) !important;
     color: #e6edf3 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
 }
 
+/* 인라인 코드 */
 html[scheme="dark"] .wp-github-md-container.markdown-body code,
 html[data-theme="dark"] .wp-github-md-container.markdown-body code,
 html.dark .wp-github-md-container.markdown-body code,
 body.dark-mode .wp-github-md-container.markdown-body code {
     color: #e6edf3 !important;
-    background-color: rgba(110, 118, 129, 0.4) !important;
+    background-color: rgba(110, 118, 129, 0.35) !important;
 }
 
 html[scheme="dark"] .wp-github-md-container.markdown-body pre code,
-html[data-theme="dark"] .wp-github-md-container.markdown-body pre code,
-html.dark .wp-github-md-container.markdown-body pre code,
-body.dark-mode .wp-github-md-container.markdown-body pre code {
+html[data-theme="dark"] .wp-github-md-container.markdown-body pre code {
     background-color: transparent !important;
     color: inherit !important;
 }
 
+/* 테이블 다크 */
 html[scheme="dark"] .wp-github-md-container.markdown-body th,
 html[scheme="dark"] .wp-github-md-container.markdown-body td,
 html[data-theme="dark"] .wp-github-md-container.markdown-body th,
 html[data-theme="dark"] .wp-github-md-container.markdown-body td {
-    border-color: #30363d !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html[scheme="dark"] .wp-github-md-container.markdown-body th,
+html[data-theme="dark"] .wp-github-md-container.markdown-body th {
+    background-color: #161b22 !important;
 }
 
 html[scheme="dark"] .wp-github-md-container.markdown-body tr:nth-child(2n),
 html[data-theme="dark"] .wp-github-md-container.markdown-body tr:nth-child(2n) {
-    background-color: #161b22 !important;
+    background-color: rgba(255, 255, 255, 0.04) !important;
 }
 
+/* 인용구 및 구분선 */
 html[scheme="dark"] .wp-github-md-container.markdown-body blockquote,
 html[data-theme="dark"] .wp-github-md-container.markdown-body blockquote {
-    color: #8b949e !important;
-    border-left-color: #30363d !important;
+    color: #9da7b3 !important;
+    border-left-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 html[scheme="dark"] .wp-github-md-container.markdown-body hr,
 html[data-theme="dark"] .wp-github-md-container.markdown-body hr {
-    background-color: #30363d !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 /* 다크 모드 복사 버튼 */
@@ -248,16 +306,17 @@ html[scheme="dark"] .wp-ghmd-copy-btn,
 html[data-theme="dark"] .wp-ghmd-copy-btn,
 html.dark .wp-ghmd-copy-btn,
 body.dark-mode .wp-ghmd-copy-btn {
-    color: #8b949e;
+    color: #c9d1d9;
     background-color: #21262d;
-    border-color: rgba(240, 246, 252, 0.1);
+    border-color: rgba(240, 246, 252, 0.15);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 html[scheme="dark"] .wp-ghmd-copy-btn:hover,
 html[data-theme="dark"] .wp-ghmd-copy-btn:hover {
-    color: #c9d1d9;
+    color: #ffffff;
     background-color: #30363d;
-    border-color: #8b949e;
+    border-color: rgba(240, 246, 252, 0.3);
 }
 
 html[scheme="dark"] .wp-ghmd-copy-btn.copied,
@@ -268,7 +327,7 @@ html[data-theme="dark"] .wp-ghmd-copy-btn.copied {
 }
 
 /* ========================================================
-   3. 다크 모드 highlight.js 공식 GitHub Dark 문법 강조
+   4. 다크 모드 highlight.js 공식 GitHub Dark 문법 강조
    ======================================================== */
 html[scheme="dark"] .hljs-doctag,
 html[scheme="dark"] .hljs-keyword,
@@ -338,46 +397,32 @@ html[data-theme="dark"] .hljs-subst {
     color: #c9d1d9 !important;
 }
 
-html[scheme="dark"] .hljs-section,
-html[data-theme="dark"] .hljs-section {
-    color: #1f6feb !important;
-    font-weight: bold;
-}
-
 /* ========================================================
-   4. OS 환경 설정 (@media prefers-color-scheme: dark) 지원
-   (사이트 테마가 light로 명시되지 않은 경우 OS 설정을 따름)
+   5. OS 환경 설정 (@media prefers-color-scheme: dark) 지원
    ======================================================== */
 @media (prefers-color-scheme: dark) {
     html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body {
-        background-color: #0d1117 !important;
-        color: #e6edf3 !important;
-        border-color: #30363d !important;
+        background-color: transparent !important;
+        border: none !important;
+        color: #e3e7ed !important;
     }
     html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body pre {
         background-color: #161b22 !important;
-        border-color: #30363d !important;
+        border: 1px solid rgba(240, 246, 252, 0.14) !important;
         color: #e6edf3 !important;
     }
     html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body code {
         color: #e6edf3 !important;
-        background-color: rgba(110, 118, 129, 0.4) !important;
+        background-color: rgba(110, 118, 129, 0.35) !important;
     }
     html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body pre code {
         background-color: transparent !important;
         color: inherit !important;
     }
-    html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body th,
-    html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body td {
-        border-color: #30363d !important;
-    }
-    html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body tr:nth-child(2n) {
-        background-color: #161b22 !important;
-    }
     html:not([scheme="light"]):not([data-theme="light"]) .wp-ghmd-copy-btn {
-        color: #8b949e;
+        color: #c9d1d9;
         background-color: #21262d;
-        border-color: rgba(240, 246, 252, 0.1);
+        border-color: rgba(240, 246, 252, 0.15);
     }
     html:not([scheme="light"]):not([data-theme="light"]) .hljs-keyword { color: #ff7b72 !important; }
     html:not([scheme="light"]):not([data-theme="light"]) .hljs-title { color: #d2a8ff !important; }

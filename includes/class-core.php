@@ -82,7 +82,7 @@ final class WP_GitHub_MD_Core
      */
     public function enqueue_frontend_assets(): void
     {
-        if (!is_singular()) {
+        if (!is_singular() && !is_preview()) {
             return;
         }
 
@@ -153,7 +153,7 @@ final class WP_GitHub_MD_Core
      */
     public function wrap_markdown_content(string $content): string
     {
-        if (is_singular()) {
+        if (is_singular() || is_preview()) {
             global $post;
             // post_content_filtered(마크다운 원본)가 존재하는 글인 경우에만 격리 래퍼 적용
             if ($post && !empty($post->post_content_filtered)) {
