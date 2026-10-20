@@ -1,5 +1,5 @@
 /**
- * WP Clean Markdown - Frontend Code Highlighting & One-Click Copy
+ * WP GitHub MD - Frontend Code Highlighting & One-Click Copy
  */
 (function () {
     'use strict';

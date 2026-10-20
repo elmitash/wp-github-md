@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name:       WP Clean Markdown (WP GitHub MD)
+ * Plugin Name:       WP GitHub MD
  * Plugin URI:        https://github.com/elmitash/wp-github-md
  * Description:       초경량, 고성능, 제로 취약점 워드프레스 순정 GitHub 마크다운 에디터 & 뷰어 플러그인
  * Version:           1.0.0
  * Requires at least: 6.0
  * Requires PHP:      8.2
- * Author:            elmitash & Antigravity
+ * Author:            elmitash
  * License:           MIT
  * Text Domain:       wp-github-md
  * Domain Path:       /languages
@@ -40,7 +40,7 @@ function wp_github_md_init(): void
     if (version_compare(PHP_VERSION, '8.2.0', '<')) {
         add_action('admin_notices', function () {
             echo '<div class="notice notice-error"><p>' .
-                esc_html__('WP Clean Markdown 플러그인은 PHP 8.2 이상 버전이 필요합니다.', 'wp-github-md') .
+                esc_html__('WP GitHub MD 플러그인은 PHP 8.2 이상 버전이 필요합니다.', 'wp-github-md') .
                 '</p></div>';
         });
         return;

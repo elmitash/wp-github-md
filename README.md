@@ -1,6 +1,6 @@
-# WP Clean Markdown (WP GitHub MD)
+# WP GitHub MD
 
-워드프레스용 최신 초경량 순정 GitHub 마크다운 에디터 & 뷰어 플러그인
+워드프레스용 최신 초경량 순정 GitHub 마크다운 에디터 & 뷰어 플러그인 (Author: elmitash)
 
 구형 플러그인(`WP Githuber MD` 등)의 레거시 부채와 보안 취약점(CVE-2023-47846 임의 파일 업로드, CVE-2024-52422 저장형 XSS)을 완전히 해결하고, PHP 8.2+ 및 최신 워드프레스 코어 API를 준수하여 설계된 모던 플러그인입니다.
 

@@ -1,5 +1,5 @@
 /**
- * WP Clean Markdown - Admin Editor Script (EasyMDE)
+ * WP GitHub MD - Admin Editor Script (EasyMDE)
  */
 (function ($) {
     'use strict';
