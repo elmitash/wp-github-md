@@ -7,7 +7,6 @@
  * Requires at least: 6.0
  * Requires PHP:      8.2
  * Author:            elmitash
- * License:           MIT
  * Text Domain:       wp-github-md
  * Domain Path:       /languages
  */
