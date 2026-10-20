@@ -1,0 +1,101 @@
+/**
+ * WP Clean Markdown - Frontend Styles (GitHub Viewer & Code Highlighting)
+ */
+
+/* 격리 컨테이너 */
+.wp-github-md-container.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 16px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1f2328;
+    background-color: transparent;
+}
+
+/* 다크 모드 지원 (시스템 설정 감응) */
+@media (prefers-color-scheme: dark) {
+    .wp-github-md-container.markdown-body {
+        color: #e6edf3;
+    }
+}
+
+/* 태스크 리스트 체크박스 스타일 정돈 */
+.wp-github-md-container ul li input.task-list-item-checkbox {
+    margin: 0 0.5em 0.25em -1.3em;
+    vertical-align: middle;
+}
+
+.wp-github-md-container ul:has(input.task-list-item-checkbox) {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+/* 코드 블록 복사 버튼 래핑 */
+.wp-github-md-container pre {
+    position: relative;
+    padding-top: 2.4em; /* 복사 버튼 공간 확보 */
+}
+
+/* 원클릭 복사 버튼 */
+.wp-ghmd-copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    font-size: 12px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 20px;
+    color: #656d76;
+    background-color: #f6f8fa;
+    border: 1px solid rgba(31, 35, 40, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    opacity: 0;
+    z-index: 10;
+}
+
+/* 마우스 호버 시 복사 버튼 노출 */
+.wp-github-md-container pre:hover .wp-ghmd-copy-btn,
+.wp-ghmd-copy-btn:focus {
+    opacity: 1;
+}
+
+/* 모바일/터치 기기에서는 복사 버튼 항상 표시 */
+@media (hover: none) {
+    .wp-ghmd-copy-btn {
+        opacity: 0.85;
+    }
+}
+
+.wp-ghmd-copy-btn:hover {
+    color: #1f2328;
+    background-color: #f3f4f6;
+    border-color: rgba(31, 35, 40, 0.2);
+}
+
+.wp-ghmd-copy-btn:active {
+    background-color: #ebecf0;
+}
+
+/* 복사 완료(Copied) 상태 */
+.wp-ghmd-copy-btn.copied {
+    color: #1a7f37;
+    background-color: #dafbe1;
+    border-color: rgba(26, 127, 55, 0.4);
+}
+
+.wp-ghmd-copy-btn svg {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: text-bottom;
+}
