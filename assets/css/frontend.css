@@ -122,19 +122,27 @@
     width: 100% !important;
     border-collapse: collapse !important;
     margin: 20px 0 !important;
+    border: 1px solid #d0d7de !important;
     border-radius: 6px;
     overflow: hidden;
+    background-color: #ffffff !important;
+}
+
+.wp-github-md-container.markdown-body tr {
+    background-color: #ffffff !important;
+    border-top: 1px solid #d0d7de !important;
 }
 
 .wp-github-md-container.markdown-body th,
 .wp-github-md-container.markdown-body td {
     padding: 10px 14px !important;
     border: 1px solid #d0d7de !important;
+    color: #1f2328 !important;
 }
 
 .wp-github-md-container.markdown-body th {
     font-weight: 600;
-    background-color: #f6f8fa;
+    background-color: #f6f8fa !important;
 }
 
 .wp-github-md-container.markdown-body tr:nth-child(2n) {
@@ -272,16 +280,34 @@ html[data-theme="dark"] .wp-github-md-container.markdown-body pre code {
 }
 
 /* 테이블 다크 */
-html[scheme="dark"] .wp-github-md-container.markdown-body th,
-html[scheme="dark"] .wp-github-md-container.markdown-body td,
-html[data-theme="dark"] .wp-github-md-container.markdown-body th,
-html[data-theme="dark"] .wp-github-md-container.markdown-body td {
-    border-color: rgba(255, 255, 255, 0.12) !important;
+html[scheme="dark"] .wp-github-md-container.markdown-body table,
+html[data-theme="dark"] .wp-github-md-container.markdown-body table,
+html.dark .wp-github-md-container.markdown-body table,
+body.dark-mode .wp-github-md-container.markdown-body table {
+    background-color: transparent !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[scheme="dark"] .wp-github-md-container.markdown-body tr,
+html[data-theme="dark"] .wp-github-md-container.markdown-body tr,
+html.dark .wp-github-md-container.markdown-body tr,
+body.dark-mode .wp-github-md-container.markdown-body tr {
+    background-color: transparent !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
 html[scheme="dark"] .wp-github-md-container.markdown-body th,
 html[data-theme="dark"] .wp-github-md-container.markdown-body th {
     background-color: #161b22 !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html[scheme="dark"] .wp-github-md-container.markdown-body td,
+html[data-theme="dark"] .wp-github-md-container.markdown-body td {
+    background-color: transparent !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #e3e7ed !important;
 }
 
 html[scheme="dark"] .wp-github-md-container.markdown-body tr:nth-child(2n),
@@ -418,6 +444,27 @@ html[data-theme="dark"] .hljs-subst {
     html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body pre code {
         background-color: transparent !important;
         color: inherit !important;
+    }
+    html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body table {
+        background-color: transparent !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body tr {
+        background-color: transparent !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    }
+    html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body th {
+        background-color: #161b22 !important;
+        color: #ffffff !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body td {
+        background-color: transparent !important;
+        border-color: rgba(255, 255, 255, 0.15) !important;
+        color: #e3e7ed !important;
+    }
+    html:not([scheme="light"]):not([data-theme="light"]) .wp-github-md-container.markdown-body tr:nth-child(2n) {
+        background-color: rgba(255, 255, 255, 0.04) !important;
     }
     html:not([scheme="light"]):not([data-theme="light"]) .wp-ghmd-copy-btn {
         color: #c9d1d9;

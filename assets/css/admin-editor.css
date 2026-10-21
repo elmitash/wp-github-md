@@ -169,26 +169,43 @@
     line-height: 1.55 !important;
 }
 
-/* 프리뷰 내부 테이블 스타일 */
+/* 프리뷰 내부 테이블 스타일 (다크모드 간섭 차단 및 깨끗한 GitHub 표준 테이블) */
 .editor-preview.markdown-body table,
 .editor-preview-side.markdown-body table {
     display: table !important;
     width: 100% !important;
     border-collapse: collapse !important;
     margin: 16px 0 !important;
+    border: 1px solid #d0d7de !important;
+    background-color: #ffffff !important;
 }
 
-.editor-preview.markdown-body th,
-.editor-preview.markdown-body td,
-.editor-preview-side.markdown-body th,
-.editor-preview-side.markdown-body td {
-    padding: 8px 14px !important;
-    border: 1px solid #d0d7de !important;
+.editor-preview.markdown-body tr,
+.editor-preview-side.markdown-body tr {
+    background-color: #ffffff !important;
+    border-top: 1px solid #d0d7de !important;
 }
 
 .editor-preview.markdown-body tr:nth-child(2n),
 .editor-preview-side.markdown-body tr:nth-child(2n) {
     background-color: #f6f8fa !important;
+}
+
+.editor-preview.markdown-body th,
+.editor-preview-side.markdown-body th {
+    font-weight: 600 !important;
+    background-color: #f6f8fa !important;
+    color: #1f2328 !important;
+    padding: 8px 14px !important;
+    border: 1px solid #d0d7de !important;
+    text-align: left !important;
+}
+
+.editor-preview.markdown-body td,
+.editor-preview-side.markdown-body td {
+    padding: 8px 14px !important;
+    border: 1px solid #d0d7de !important;
+    color: #1f2328 !important;
 }
 
 /* 전체화면 모드 시 워드프레스 어드민바보다 위에 위치 */
